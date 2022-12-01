@@ -82,7 +82,6 @@ export class DynamicstringStack extends Stack {
     });
 
     // Script content to start web server
-    // const userDataScript = readFileSync('./lib/user-data.sh', 'utf8');
     const userDataScript = readFileSync('./lib/user-data.sh', 'utf8');
     ec2Instance.addUserData(userDataScript);
   }
