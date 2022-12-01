@@ -1,10 +1,10 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
-import {readFileSync} from 'fs';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as iam from 'aws-cdk-lib/aws-iam';
 
+import {readFileSync} from 'fs';
 export class DynamicstringStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
@@ -82,6 +82,7 @@ export class DynamicstringStack extends Stack {
     });
 
     // Script content to start web server
+    // const userDataScript = readFileSync('./lib/user-data.sh', 'utf8');
     const userDataScript = readFileSync('./lib/user-data.sh', 'utf8');
     ec2Instance.addUserData(userDataScript);
   }

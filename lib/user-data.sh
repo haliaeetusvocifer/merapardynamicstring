@@ -1,9 +1,10 @@
+
 yum update -y
 sudo sudo
 
 amazon-linux-extras install -y nginxl
-systemctl start nginxl
-systemctl enable nginxl
+systemctl start nginx
+systemctl enable nginx
 
 chmod 2775 /usr/share/nginx/html
 find /usr/share/nginx/html -type d -exec chmod 2775 {} \;
